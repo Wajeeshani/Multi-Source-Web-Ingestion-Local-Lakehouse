@@ -1,0 +1,27 @@
+# Docker
+postgres_data/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment
+.env
+venv/
+
+# Airflow
+airflow.cfg
+logs/
+
+# Storage (but keep empty directory structure)
+storage/bronze/*
+storage/silver/*  
+storage/gold/*
+!storage/bronze/.gitkeep
+!storage/silver/.gitkeep
+!storage/gold/.gitkeep
+
+# IDE
+.vscode/
+.idea/
