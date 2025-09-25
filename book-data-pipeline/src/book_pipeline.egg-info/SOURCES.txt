@@ -1,0 +1,12 @@
+setup.py
+book_pipeline.egg-info/PKG-INFO
+book_pipeline.egg-info/SOURCES.txt
+book_pipeline.egg-info/dependency_links.txt
+book_pipeline.egg-info/top_level.txt
+ingestion/__init__.py
+ingestion/books_toscrape.py
+ingestion/utils.py
+utils/__init__.py
+utils/config.py
+utils/constants.py
+utils/schemas.py
