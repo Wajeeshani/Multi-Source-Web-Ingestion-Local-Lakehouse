@@ -1,0 +1,24 @@
+{
+  "test_timestamp": "2025-09-26T09:57:10.421312",
+  "results": {
+    "books_toscrape_ingestion": true,
+    "itbookstore_ingestion": true,
+    "books_toscrape_transform": true,
+    "itbookstore_transform": true,
+    "silver_storage": true,
+    "silver_reading": true,
+    "cross_source_matching": true,
+    "gold_layer_construction": true,
+    "gold_storage": true,
+    "gold_validation": true
+  },
+  "metrics": {
+    "books_toscrape_ingested": 12,
+    "itbookstore_ingested": 3,
+    "silver_books_processed": 15,
+    "gold_canonical_books": 12,
+    "price_history_events": 15,
+    "cross_source_matches": 0,
+    "average_confidence": 1.0
+  }
+}
