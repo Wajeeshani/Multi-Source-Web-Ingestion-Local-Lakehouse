@@ -5,8 +5,7 @@
 A production-ready data pipeline that ingests book data from multiple web sources, processes it through a medallion architecture, and delivers curated data suitable for analysis. 
 Built with modern data engineering tools and best practices.
 
-<img width="1355" height="620" alt="image" src="https://github.com/user-attachments/assets/8fe6940d-1503-4152-87c3-cbb940dfe162" />
-
+<img width="1343" height="619" alt="image" src="https://github.com/user-attachments/assets/5afe1626-ce57-47cd-aea2-f3fdf43c9de5" />
 
 ## Architecture
 
