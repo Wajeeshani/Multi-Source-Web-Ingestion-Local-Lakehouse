@@ -15,51 +15,6 @@ Built with modern data engineering tools and best practices.
 
 <img width="534" height="329" alt="image" src="https://github.com/user-attachments/assets/acc4ff84-991e-4096-ba70-cbbdda0e84bf" />
 
-## Data Dictionary
-
-### Gold Layer - Curated Data Models
-
-1. DIM_BOOK (Canonical Book Dimension) - SCD Type 2
-Purpose: Master book entity with historical tracking
-
-| Field              | Type           | Description                            | Constraints             | Example                                   |
-|--------------------|----------------|----------------------------------------|-------------------------|-------------------------------------------|
-| book_id            | STRING (PK)    | System-generated unique identifier     | Not null, Unique        | bk_001_a22124811bfa8350                   |
-| isbn13             | STRING         | International Standard Book Number     | 13 digits, Optional     | 9781912047451                             |
-| title              | STRING         | Book title                             | Not null, Max 500 chars | "It's Only the Himalayas"                 |
-| authors            | ARRAY<STRING>  | List of authors                        | Array of strings        | ["Simon Long"]                            |
-| primary_category   | STRING         | Main category classification           | Not null                | "Travel"                                  |
-| category_hierarchy | ARRAY<STRING>  | Full category path                     | Array hierarchy         | ["Books", "Travel", "Adventure"]          |
-| valid_from         | TIMESTAMP      | Version start timestamp                | Not null                | 2023-09-24 10:00:00                       |
-| valid_to           | TIMESTAMP      | Version end timestamp                  | Null for current        | NULL                                      |
-| is_current         | BOOLEAN        | Flag for current version               | Not null                | true                                      |
-| confidence_score   | FLOAT          | Matching confidence (0.0-1.0)          | Range 0.0-1.0           | 0.95                                      |
-| source_count       | INTEGER        | Number of source systems               | Min 1                   | 2                                         |
-
-2. FACT_PRICE_HISTORY (Price Time Series)
-Purpose: Track price changes over time
-
-| Field              | Type        | Description                | Constraints            | Example                       |
-|--------------------|-------------|----------------------------|------------------------|-------------------------------|
-| book_id            | STRING (FK) | Reference to DIM_BOOK       | Not null               | bk_001_a22124811bfa8350       |
-| source             | STRING      | Price source system         | Not null               | "books_toscrape"              |
-| price              | FLOAT       | Current price in currency   | ≥ 0.0                  | 45.17                         |
-| currency           | STRING      | Currency code               | ISO 4217               | "GBP"                         |
-| effective_date     | TIMESTAMP   | When price was effective    | Not null               | 2023-09-24 10:05:00           |
-| is_discount        | BOOLEAN     | Discount indicator          | Default false          | false                         |
-| discount_percentage| FLOAT       | Discount percentage         | 0.0–100.0, Optional    | 15.5                          |
-
-3. FACT_AVAILABILITY (Availability Timeline)
-Purpose: Track stock status changes
-
-| Field           | Type        | Description                   | Constraints   | Example                       |
-|-----------------|-------------|-------------------------------|---------------|-------------------------------|
-| book_id         | STRING (FK) | Reference to DIM_BOOK         | Not null      | bk_001_a22124811bfa8350       |
-| source          | STRING      | Availability source           | Not null      | "it_bookstore"                |
-| status          | STRING      | Current availability status   | Enum values   | "in_stock"                    |
-| effective_date  | TIMESTAMP   | When status was recorded      | Not null      | 2023-09-24 10:10:00           |
-| previous_status | STRING      | Previous status               | Optional      | "out_of_stock"                |
-
 
 ## Technology Stack
 
