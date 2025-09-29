@@ -59,17 +59,6 @@ book-data-pipeline/
 │   │   └── .gitkeep
 │   └── gold/
 │       └── .gitkeep
-│
-├── docs/
-│   ├── images/
-│   │   └── architecture.png
-│   ├── setup_guide.md
-│   └── troubleshooting.md
-│
-└── examples/
-    ├── sample_bronze_data.json
-    ├── sample_silver_data.parquet/
-    └── sample_gold_data.parquet/
 ```
 
 ## 2. High-Level System Diagram
