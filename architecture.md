@@ -4,7 +4,7 @@ A production-ready data pipeline that ingests book data from multiple web source
 ## 1. Project Structure
 This section provides a high-level overview of the project's directory and file structure, categorised by architectural layer or major functional area. It is essential for quickly navigating the codebase, locating relevant files, and understanding the overall organization and separation of concerns.
 
-
+```
 book-data-pipeline/
 ├── .gitignore
 ├── README.md
@@ -70,6 +70,7 @@ book-data-pipeline/
     ├── sample_bronze_data.json
     ├── sample_silver_data.parquet/
     └── sample_gold_data.parquet/
+```
 
 ## 2. High-Level System Diagram
 
